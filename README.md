@@ -23,3 +23,6 @@ You can edit the sequence of temperatures to which the model will react by editi
 Therefore, to run the simulation, you make the appropriate adjustments to the ```receding_horizon.py``` file and run it:
 ```python3 receding_horizon.py```
 If you chose to simulate model number 8 from the ```cell_models_mRNA``` type, the results will be in ```cell_models_mRNA/model_8/results/[DATE_AND_TIME]``` directory.
+
+If you just want to create Bocop files from the given JSON files, you can use the ```create_bocop_files.py``` script and run as follows:
+```python3 create_bocop_files.py ../cell_models_mRNA/model_8/t0/model_8_t0.json [DEST_DIR]```
