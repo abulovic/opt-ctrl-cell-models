@@ -1,0 +1,4 @@
+Compared to original (model 6):
+1.	removed metabolite B and replaced nu_M_B with its expression (mu + C_B) * B_0
+	consequence: no visible consequence
+2. 

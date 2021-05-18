@@ -1,0 +1,3 @@
+Changes proposed by Vincent, but I think something went wrong.
+The model 6 and model 7 don't behave in the same way.
+So - keeping this model, but the changes will be done in the model 8.

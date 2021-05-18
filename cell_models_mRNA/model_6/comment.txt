@@ -1,0 +1,3 @@
+The model with the almost-right formulation.
+Almost right refers to small changes proposed by Vincent, such as :
+- not creating metabolite B, but just imposing a necessary fixed maintenance flux from energy.

@@ -1,0 +1,4 @@
+Ribosome R, and chaperone C.
+Enzyme is produced in unfolded form and can fold spontaneously.
+Chaperone serves to fold 10% of the house keeping protein HP.
+Metabolite B kept at constant levels.

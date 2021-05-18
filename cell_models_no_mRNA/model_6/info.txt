@@ -1,0 +1,6 @@
+Ribosome R, and chaperone C.
+Enzyme is produced in unfolded form and can fold spontaneously
+or through the action of the chaperone (nu_CH).
+Enzyme can aggregate, and can be disaggregated by the chaperone.
+Chaperone also serves to fold 10% of the house keeping protein HP.
+Metabolite B kept at constant levels.

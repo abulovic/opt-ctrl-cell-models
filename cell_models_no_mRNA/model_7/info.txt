@@ -1,0 +1,7 @@
+Ribosome R, and chaperone C.
+Two types of enzyme are produced in unfolded form.
+E_sf (spontaneously folding) can fold spontaneously, but the other type of enzyme,
+E_ca (chaperone assisted) requires chaperone for folding.
+Both enzymes can aggregate, and can be disaggregated by the chaperone.
+Chaperone also serves to fold 10% of the house keeping protein HP.
+Metabolite B kept at constant levels.

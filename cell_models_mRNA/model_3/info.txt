@@ -1,0 +1,6 @@
+Enzyme is split into two:
+- spontaneously folding (major part of enzymes)
+- chaperone assisted (5 %)
+
+Chaperone needs to  be used to fold the E_ca.
+Spontanously folding enzyme is produced in its folded form.

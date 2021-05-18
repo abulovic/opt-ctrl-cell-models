@@ -1,0 +1,489 @@
+{
+	"modelName": "Simple RBA problem",
+	"states":
+	[
+		{
+			"name": "X",
+			"bound": {
+				"type":	"lower",
+				"lb":	0,
+				"ub":	2e+20
+			},
+			"expression": "mu"
+		 },
+		 {
+		 	"name": "E_sf_mrna",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_E_sf - (mu + k_deg) * E_sf_mrna"
+		 },
+		 {
+		 	"name": "E_sf",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "alpha * E_sf_mrna - mu * E_sf"
+		 },
+		 {
+		 	"name": "E_ca_mrna",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_E_ca - (mu + k_deg) * E_ca_mrna"
+		 },
+		 {
+		 	"name": "E_ca_u",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "alpha * E_ca_mrna - nu_CH + (k_u_slope * T + k_u_intercept) * E_ca_f - (mu + k_agg) * E_ca_u"
+		 },
+		 {
+		 	"name": "E_ca_f",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_CH - (k_u_slope * T + k_u_intercept) * E_ca_f - mu * E_ca_f"
+		 },
+		 {
+		 	"name": "E_ca_a",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "k_agg * E_ca_u - nu_DEG - mu * E_ca_a"
+		 },
+		 {
+		 	"name": "R_mrna",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_R - (mu + k_deg) * R_mrna"
+		 },
+		 {
+		 	"name": "R",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "alpha * R_mrna - mu * R"
+		 },
+		 {
+		 	"name": "C_mrna",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_C - (mu + k_deg) * C_mrna"
+		 },
+		 {
+		 	"name": "C",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "alpha * C_mrna - mu * C"
+		 },
+		 {
+		 	"name": "P_mrna",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_P - (mu + k_deg) * P_mrna"
+		 },
+		 {
+		 	"name": "P",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "alpha * P_mrna - mu * P"
+		 },
+		 {
+		 	"name": "B",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_B - (mu + 0.001) * B"
+		 },
+		 {
+		 	"name": "HP_mrna",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_HP - (mu + k_deg) * HP_mrna"
+		 },
+		 {
+		 	"name": "HP",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "alpha * HP_mrna - mu * HP"
+		 }
+	],
+	"controls":
+	[
+		{
+			"name": "nu_P_E_sf",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_E_ca",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_R",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_C",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_P",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_B",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_HP",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_CH",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_DEG",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "alpha",
+			"bound": {
+		 		"type":	"both",
+		 		"lb":	0,
+		 		"ub":	1
+		 	}
+		}
+	],
+	"parameters": 
+	[
+	],
+	"algebraic":
+	[
+		{
+			"name": "mu",
+			"bound": {
+		 		"type":	"free",
+		 		"lb":	-2e+20,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_M",
+			"bound": {
+		 		"type":	"free",
+		 		"lb":	-2e+20,
+		 		"ub":	2e+20
+		 	}
+		}
+	],
+	"constants":
+	[
+		{
+			"name": 	"n_R",
+			"value":	20120
+		},
+		{
+			"name": 	"n_C",
+			"value":	5000
+		},
+		{
+			"name": 	"n_P",
+			"value":	5000
+		},
+		{
+			"name":		"n_E_sf",
+			"value":	19000
+		},
+		{
+			"name":		"n_E_ca",
+			"value":	1000
+		},
+		{
+			"name":		"D_c",
+			"value":	4.89
+		},
+		{
+			"name":		"k_R",
+			"value":	500
+		},
+		{
+			"name":		"k_R_slope",
+			"value":	42
+		},
+		{
+			"name":		"k_R_intercept",
+			"value":	-747.6
+		},
+		{
+			"name":		"k_M",
+			"value":	900
+		},
+		{
+			"name":		"k_C",
+			"value":	1500
+		},
+		{
+			"name":		"k_P",
+			"value":	600
+		},
+		{
+			"name":		"T",
+			"value":	40
+		},
+		{
+			"name":		"n_S",
+			"value":	0.5
+		},
+		{
+			"name":		"n_HP",
+			"value":	300
+		},
+		{
+			"name":		"X_0",
+			"value":	100
+		},
+		{
+			"name":		"B_0",
+			"value":	0.387
+		},
+		{
+			"name":		"HP_0",
+			"value":	0.00163
+		},
+		{
+			"name":		"k_deg",
+			"value":	0.2
+		},
+		{
+			"name":		"k_u",
+			"value":	6
+		},
+		{
+			"name":		"k_u_slope",
+			"value":	1.2
+		},
+		{
+			"name":		"k_u_intercept",
+			"value":	-32.4
+		},
+		{
+			"name":		"k_agg",
+			"value":	0.5
+		}
+	],
+	"boundarycond":
+	[
+		{
+			"name":	"D_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "((E_sf_t0 + E_sf_mrna_t0) * n_E_sf + (E_ca_u_t0 + E_ca_f_t0 + 2 * E_ca_a_t0 + E_ca_mrna_t0) * n_E_ca + (R_t0 + R_mrna_t0) * n_R + (C_t0 + C_mrna_t0) * n_C + (P_t0 + P_mrna_t0) * n_P + (HP_t0 + HP_mrna_t0) * n_HP) - D_c"
+		},
+		{
+			"name":	"X_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "X_t0 - X_0"
+		},
+		{
+			"name": "B_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "B_t0 - B_0"
+		},
+		{
+			"name": "HP_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "HP_t0 - HP_0"
+		}
+	],
+	"pathconstraints":
+	[
+		{
+			"name": "metabolism_ss",
+			"bound": {
+				"type": "lower",
+				"lb": 0,
+				"ub": 2e+20
+			},
+			"expression": "n_S * nu_M + 0.95 * n_E_ca * nu_DEG + k_deg * (n_E_sf * E_sf_mrna + n_E_ca * E_ca_mrna + n_R * R_mrna + n_C * C_mrna + n_P * P_mrna + n_HP * HP_mrna) - (n_E_sf * nu_P_E_sf + n_E_ca * nu_P_E_ca + n_R * nu_P_R + n_C * nu_P_C + n_P * nu_P_P + n_HP * nu_P_HP) - alpha * (n_E_sf * E_sf_mrna + n_E_ca * E_ca_mrna + n_R * R_mrna + n_C * C_mrna + n_P * P_mrna + n_HP * HP_mrna)"
+		},
+		{
+			"name":	"growth_rate",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "D_c * mu + n_E_ca * nu_DEG + k_deg * (n_E_sf * E_sf_mrna + n_E_ca * E_ca_mrna + n_R * R_mrna + n_C * C_mrna + n_P * P_mrna + n_HP * HP_mrna) - (n_E_sf * nu_P_E_sf + n_E_ca * nu_P_E_ca + n_R * nu_P_R  + n_C * nu_P_C + n_P * nu_P_P + n_HP * nu_P_HP) - alpha * (n_E_sf * E_sf_mrna + n_E_ca * E_ca_mrna + n_R * R_mrna + n_C * C_mrna + n_P * P_mrna + n_HP * HP_mrna)"
+		},
+		{
+			"name": "capacity_met_sf",
+			"bound": {
+				"type":	"upper",
+				"lb":	-2e+20,
+				"ub":	0
+			},
+			"expression": "nu_M + nu_P_B - k_M * E_sf"
+		},
+		{
+			"name": "capacity_met_ca",
+			"bound": {
+				"type":	"upper",
+				"lb":	-2e+20,
+				"ub":	0
+			},
+			"expression": "nu_M + nu_P_B - k_M * E_ca_f"
+		},
+		{
+			"name": "capacity_ribo",
+			"bound": {
+				"type":	"lower",
+				"lb":	0,
+				"ub":	2e+20
+			},
+			"expression": "k_R * R - alpha * (n_E_sf * E_sf_mrna + n_E_ca * E_ca_mrna + n_R * R_mrna + n_C * C_mrna + n_P * P_mrna + n_HP * HP_mrna)"
+		},
+		{
+			"name": "capacity_chaperone",
+			"bound": {
+				"type":	"lower",
+				"lb":	0,
+				"ub":	2e+20
+			},
+			"expression": "k_C * C - n_E_ca * nu_CH"
+		},
+		{
+			"name": "capacity_protease",
+			"bound": {
+				"type":	"lower",
+				"lb":	0,
+				"ub":	2e+20
+			},
+			"expression": "k_P * P - n_E_ca * nu_DEG"
+		},
+		{
+			"name": "B_steady_state",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "nu_P_B - (mu + 0.001) * B"
+		},
+		{
+			"name": "HP_steady_state",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "alpha * HP_mrna - mu * HP"
+		}
+	],
+	"criterion": "- X",
+	"time":
+	{
+		"free": "none",
+		"initial": 0,
+		"final": 50
+	},
+	"discretization":
+	{
+		"steps": 9,
+		"method": "euler_imp"
+	},
+	"fixed_part": "# Optimization :\noptimization.type string single\nbatch.type integer 1\nbatch.index integer -1\nbatch.nrange integer 3\nbatch.lowerbound double 100\nbatch.upperbound double 1000\nbatch.directory string time_step\n\n# Initialization :\ninitialization.type string from_init_file\ninitialization.file string none\n\n# Parameter identification :\nparamid.type string false\nparamid.separator string ,\nparamid.file string no_directory\nparamid.dimension integer 0",
+	"solution": {
+		"file": "problem.sol"
+	}
+}

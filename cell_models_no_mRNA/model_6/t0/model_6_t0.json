@@ -1,0 +1,377 @@
+{
+	"modelName": "Simple RBA problem",
+	"states":
+	[
+		{
+			"name": "X",
+			"bound": {
+				"type":	"lower",
+				"lb":	0,
+				"ub":	2e+20
+			},
+			"expression": "mu * X"
+		 },
+		 {
+		 	"name": "S_ext",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "-mu * X"
+		 },
+		 {
+		 	"name": "E_u",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_E + nu_DA - nu_CH + k_u * E_f - (k_f + k_a + mu) * E_u"
+		 },
+		 {
+		 	"name": "E_f",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_CH + k_f * E_u - k_u * E_f - mu * E_f"
+		 },
+		 {
+		 	"name": "E_a",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "-nu_DA + k_a * E_u - mu * E_a"
+		 },
+		 {
+		 	"name": "R",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_R - mu * R"
+		 },
+		 {
+		 	"name": "C",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_C - mu * C"
+		 },
+		 {
+		 	"name": "B",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_B - (mu + 0.001) * B"
+		 },
+		 {
+		 	"name": "HP",
+		 	"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	},
+		 	"expression": "nu_P_HP - mu * HP"
+		 }
+	],
+	"controls":
+	[
+		{
+			"name": "nu_P_E",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_R",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_B",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_HP",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_P_C",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_CH",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		},
+		{
+			"name": "nu_DA",
+			"bound": {
+		 		"type":	"lower",
+		 		"lb":	0,
+		 		"ub":	2e+20
+		 	}
+		}
+	],
+	"parameters": 
+	[
+	],
+	"algebraic":
+	[
+		{
+			"name": "mu",
+			"bound": {
+		 		"type":	"free",
+		 		"lb":	0,
+		 		"ub":	0
+		 	}
+		},
+		{
+			"name": "nu_M",
+			"bound": {
+		 		"type":	"free",
+		 		"lb":	0,
+		 		"ub":	0
+		 	}
+		}
+	],
+	"constants":
+	[
+		{
+			"name": 	"n_R",
+			"value":	180000
+		},
+		{
+			"name":		"n_E",
+			"value":	20000
+		},
+		{
+			"name":		"n_HP",
+			"value":	300
+		},
+		{
+			"name":		"n_C",
+			"value":	1000
+		},
+		{
+			"name":		"D_c",
+			"value":	4.89
+		},
+		{
+			"name":		"k_R_slope",
+			"value":	84
+		},
+		{
+			"name":		"k_R_intercept",
+			"value":	-747.6
+		},
+		{
+			"name":		"k_M_slope",
+			"value":	120
+		},
+		{
+			"name":		"k_M_intercept",
+			"value":	-3000
+		},
+		{
+			"name":		"k_C",
+			"value":	600
+		},
+		{
+			"name":		"k_f",
+			"value":	600
+		},
+		{
+			"name":		"k_u",
+			"value":	0.6
+		},
+		{
+			"name":		"k_a",
+			"value":	0.6
+		},
+		{
+			"name":		"T",
+			"value":	37
+		},
+		{
+			"name":		"n_S",
+			"value":	0.5
+		},
+		{
+			"name":		"X_0",
+			"value":	100
+		},
+		{
+			"name":		"S_ext_0",
+			"value":	1000
+		},
+		{
+			"name":		"B_0",
+			"value":	0.387
+		},
+		{
+			"name":		"HP_0",
+			"value":	0.005
+		}
+	],
+	"boundarycond":
+	[
+		{
+			"name":	"D_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "((E_u_t0 + E_f_t0 + E_a_t0) * n_E + R_t0 * n_R + HP_t0 * n_HP + C_t0 * n_C) - D_c"
+		},
+		{
+			"name":	"X_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "X_t0 - X_0"
+		},
+		{
+			"name": "S_ext_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "S_ext_t0 - S_ext_0"
+		},
+		{
+			"name": "B_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "B_t0 - B_0"
+		},
+		{
+			"name": "HP_init",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "HP_t0 - HP_0"
+		}
+	],
+	"pathconstraints":
+	[
+		{
+			"name":	"growth_rate",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "D_c * mu - (nu_P_R * n_R + nu_P_E * n_E + nu_P_HP * n_HP + nu_P_C * n_C)"
+		},
+		{
+			"name": "capacity_met",
+			"bound": {
+				"type":	"upper",
+				"lb":	-2e+20,
+				"ub":	0
+			},
+			"expression": "nu_M + nu_P_B - (k_M_slope * T + k_M_intercept) * E_f"
+		},
+		{
+			"name": "capacity_ribo",
+			"bound": {
+				"type":	"upper",
+				"lb":	-2e+20,
+				"ub":	0
+			},
+			"expression": "(nu_P_R * n_R + nu_P_E * n_E + nu_P_HP * n_HP + nu_P_C * n_C) - (k_R_slope * T + k_R_intercept) * R"
+		},
+		{
+			"name": "capacity_chaperone",
+			"bound": {
+				"type":	"upper",
+				"lb":	-2e+20,
+				"ub":	0
+			},
+			"expression": "(0.1 * n_HP * nu_P_HP + n_E * (nu_CH + nu_DA)) - k_C * C"
+		},
+		{
+			"name": "metabolism_ss",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "n_S * nu_M - (n_E * nu_P_E + n_R * nu_P_R + n_HP * nu_P_HP + n_C * nu_P_C)"
+		},
+		{
+			"name": "B_steady_state",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "nu_P_B - (mu + 0.001) * B"
+		},
+		{
+			"name": "HP_steady_state",
+			"bound": {
+		 		"type":	"equal",
+		 		"lb":	0,
+		 		"ub":	0
+		 	},
+		 	"expression": "nu_P_HP - mu * HP"
+		}
+	],
+	"criterion": "- X",
+	"time":
+	{
+		"free": "none",
+		"initial": 0,
+		"final": 20
+	},
+	"discretization":
+	{
+		"steps": 9,
+		"method": "euler_imp"
+	},
+	"fixed_part": "# Optimization :\noptimization.type string single\nbatch.type integer 1\nbatch.index integer -1\nbatch.nrange integer 3\nbatch.lowerbound double 100\nbatch.upperbound double 1000\nbatch.directory string time_step\n\n# Initialization :\ninitialization.type string from_init_file\ninitialization.file string none\n\n# Parameter identification :\nparamid.type string false\nparamid.separator string ,\nparamid.file string no_directory\nparamid.dimension integer 0",
+	"solution": {
+		"file": "problem.sol"
+	}
+}
